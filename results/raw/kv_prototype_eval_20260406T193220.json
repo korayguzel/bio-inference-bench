@@ -1,0 +1,92 @@
+[
+  {
+    "label": "decode_heavy",
+    "prompt_token_length": 32,
+    "max_new_tokens": 256,
+    "baseline": {
+      "prefill_ms": 192.81,
+      "decode_ms": 2064.34,
+      "total_ms": 2257.14,
+      "actual_new_tokens": 256,
+      "decode_tokens_per_sec": 123.53,
+      "end_to_end_tokens_per_sec": 113.42,
+      "memory_after_load_mb": 1476.35,
+      "observed_peak_allocated_mb": 1536.86,
+      "observed_peak_reserved_mb": 1712.0,
+      "generation_overhead_above_load_mb": 60.51,
+      "int8_kv_storage_mb": 0.0,
+      "fp16_kv_equivalent_mb": 0.0
+    },
+    "prototype": {
+      "prefill_ms": 52.8,
+      "decode_ms": 3146.42,
+      "total_ms": 3199.21,
+      "actual_new_tokens": 256,
+      "decode_tokens_per_sec": 81.04,
+      "end_to_end_tokens_per_sec": 80.02,
+      "memory_after_load_mb": 1485.47,
+      "observed_peak_allocated_mb": 1564.31,
+      "observed_peak_reserved_mb": 1734.0,
+      "generation_overhead_above_load_mb": 78.84,
+      "int8_kv_storage_mb": 26.01,
+      "fp16_kv_equivalent_mb": 50.45
+    },
+    "sanity_check": {
+      "token_agreement_pct": 100.0,
+      "first_divergence_step": 64,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 100.0,
+      "avg_logit_cosine_similarity": 0.999995,
+      "logit_steps_compared": 64
+    },
+    "memory_saved_mb": -18.33,
+    "memory_saved_pct": -30.3,
+    "speed_delta_tokens_per_sec": -42.49,
+    "speed_delta_pct": -34.4
+  },
+  {
+    "label": "long_decode",
+    "prompt_token_length": 256,
+    "max_new_tokens": 512,
+    "baseline": {
+      "prefill_ms": 13.32,
+      "decode_ms": 3994.61,
+      "total_ms": 4007.94,
+      "actual_new_tokens": 512,
+      "decode_tokens_per_sec": 127.92,
+      "end_to_end_tokens_per_sec": 127.75,
+      "memory_after_load_mb": 1561.97,
+      "observed_peak_allocated_mb": 1699.66,
+      "observed_peak_reserved_mb": 1930.0,
+      "generation_overhead_above_load_mb": 137.69,
+      "int8_kv_storage_mb": 0.0,
+      "fp16_kv_equivalent_mb": 0.0
+    },
+    "prototype": {
+      "prefill_ms": 17.71,
+      "decode_ms": 6402.35,
+      "total_ms": 6420.06,
+      "actual_new_tokens": 512,
+      "decode_tokens_per_sec": 79.81,
+      "end_to_end_tokens_per_sec": 79.75,
+      "memory_after_load_mb": 1485.47,
+      "observed_peak_allocated_mb": 1696.45,
+      "observed_peak_reserved_mb": 1906.0,
+      "generation_overhead_above_load_mb": 210.97,
+      "int8_kv_storage_mb": 69.52,
+      "fp16_kv_equivalent_mb": 134.82
+    },
+    "sanity_check": {
+      "token_agreement_pct": 100.0,
+      "first_divergence_step": 64,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 100.0,
+      "avg_logit_cosine_similarity": 0.999993,
+      "logit_steps_compared": 64
+    },
+    "memory_saved_mb": -73.28,
+    "memory_saved_pct": -53.2,
+    "speed_delta_tokens_per_sec": -48.11,
+    "speed_delta_pct": -37.6
+  }
+]

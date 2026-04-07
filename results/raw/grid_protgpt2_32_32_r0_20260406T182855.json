@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "name": "protgpt2",
+    "hf_path": "nferruz/ProtGPT2",
+    "hf_path_attempted": [],
+    "hf_path_loaded": "nferruz/ProtGPT2",
+    "param_count": 774030080,
+    "param_count_str": "774.0M",
+    "dtype": "float16",
+    "weight_memory_mb": 1476.35,
+    "hidden_size": 1280,
+    "num_layers": 36,
+    "num_attention_heads": 20,
+    "num_kv_heads": 20,
+    "head_dim": 64,
+    "max_position_embeddings": 1024,
+    "vocab_size": 50257,
+    "architecture": "GPT2LMHeadModel",
+    "warnings": [
+      "Config field 'num_key_value_heads' not found (tried fallbacks: ('num_kv_heads',))",
+      "num_key_value_heads not found; falling back to num_attention_heads=20",
+      "Applied patch: Added get_head_mask() to ProGenPreTrainedModel (removed in transformers 5.x)",
+      "Applied patch: Added get_head_mask() to inner transformer model (GPT2Model)"
+    ]
+  },
+  "primary_result": {
+    "model_name": "protgpt2",
+    "prompt_token_length": 32,
+    "max_new_tokens": 32,
+    "actual_new_tokens": 32,
+    "total_seq_length": 64,
+    "batch_size": 1,
+    "use_cache": true,
+    "method": "manual_prefill_decode",
+    "prefill_time_ms": 18.436882994137704,
+    "decode_time_ms": 249.77332502021454,
+    "total_time_ms": 268.21,
+    "decode_tokens_per_sec": 124.11,
+    "end_to_end_tokens_per_sec": 119.31,
+    "per_step_decode_times_ms": [
+      8.157,
+      8.164,
+      8.154,
+      8.026,
+      8.016,
+      7.925,
+      7.777,
+      9.105,
+      8.351,
+      8.461,
+      8.014,
+      8.725,
+      8.103,
+      8.167,
+      8.094,
+      7.975,
+      7.799,
+      7.881,
+      7.761,
+      7.825,
+      7.874,
+      7.802,
+      8.004,
+      7.77,
+      8.212,
+      7.787,
+      7.984,
+      7.849,
+      8.03,
+      7.889,
+      8.09
+    ],
+    "memory_after_load": {
+      "allocated_mb": 1485.470703125,
+      "reserved_mb": 1618.0,
+      "max_allocated_mb": 1485.470703125,
+      "max_reserved_mb": 1618.0
+    },
+    "memory_after_prefill": {
+      "allocated_mb": 1494.1640625,
+      "reserved_mb": 1644.0,
+      "max_allocated_mb": 1494.24169921875,
+      "max_reserved_mb": 1644.0
+    },
+    "memory_peak": {
+      "allocated_mb": 1496.65673828125,
+      "reserved_mb": 1650.0,
+      "max_allocated_mb": 1496.8251953125,
+      "max_reserved_mb": 1650.0
+    },
+    "theoretical_kv_cache": {
+      "total_mb": 11.25,
+      "per_token_mb": 0.1758,
+      "as_pct_of_weights": 0.76,
+      "growth_per_100_tokens_mb": 17.58,
+      "seq_len_used": 64
+    },
+    "observed_peak_allocated_mb": 1496.83,
+    "observed_peak_reserved_mb": 1650.0,
+    "error": null,
+    "warnings": []
+  },
+  "secondary_result": {
+    "model_name": "protgpt2",
+    "prompt_token_length": 32,
+    "max_new_tokens": 32,
+    "actual_new_tokens": 4,
+    "total_seq_length": 36,
+    "batch_size": 1,
+    "use_cache": true,
+    "method": "generate_api",
+    "prefill_time_ms": null,
+    "decode_time_ms": null,
+    "total_time_ms": 36.52,
+    "decode_tokens_per_sec": 0.0,
+    "end_to_end_tokens_per_sec": 109.54,
+    "per_step_decode_times_ms": [],
+    "memory_after_load": {
+      "allocated_mb": 1485.470703125,
+      "reserved_mb": 1618.0,
+      "max_allocated_mb": 1485.470703125,
+      "max_reserved_mb": 1618.0
+    },
+    "memory_after_prefill": null,
+    "memory_peak": {
+      "allocated_mb": 1485.47119140625,
+      "reserved_mb": 1624.0,
+      "max_allocated_mb": 1492.8173828125,
+      "max_reserved_mb": 1624.0
+    },
+    "theoretical_kv_cache": {
+      "total_mb": 6.33,
+      "per_token_mb": 0.1758,
+      "as_pct_of_weights": 0.43,
+      "growth_per_100_tokens_mb": 17.58,
+      "seq_len_used": 36
+    },
+    "observed_peak_allocated_mb": 1492.82,
+    "observed_peak_reserved_mb": 1624.0,
+    "error": null,
+    "warnings": []
+  },
+  "theoretical_kv_upper_bound": {
+    "total_mb": 11.25,
+    "total_bytes": 11796480,
+    "per_token_mb": 0.1758,
+    "as_pct_of_weights": 0.76,
+    "growth_per_100_tokens_mb": 17.58,
+    "seq_len_used": 64,
+    "label": "upper_bound_at_configured_max"
+  }
+}

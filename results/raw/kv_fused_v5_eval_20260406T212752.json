@@ -1,0 +1,192 @@
+[
+  {
+    "label": "decode_heavy",
+    "prompt_token_length": 32,
+    "max_new_tokens": 256,
+    "sanity_steps_short": 64,
+    "sanity_steps_long": 64,
+    "baseline_after_load_mb": 1485.47,
+    "baseline": {
+      "method": "baseline_fp16",
+      "prefill_ms": 18.5,
+      "decode_ms": 2009.04,
+      "total_ms": 2027.54,
+      "actual_new_tokens": 256,
+      "decode_tokens_per_sec": 126.93,
+      "end_to_end_tokens_per_sec": 126.26,
+      "memory_after_load_mb": 1485.47,
+      "observed_peak_allocated_mb": 1536.76,
+      "observed_peak_reserved_mb": 1712.0,
+      "generation_overhead_above_load_mb": 51.29,
+      "cache_info": {}
+    },
+    "v2_python_chunked": {
+      "method": "v2_python_chunked",
+      "prefill_ms": 11.69,
+      "decode_ms": 6267.56,
+      "total_ms": 6279.24,
+      "actual_new_tokens": 256,
+      "decode_tokens_per_sec": 40.69,
+      "end_to_end_tokens_per_sec": 40.77,
+      "memory_after_load_mb": 1494.17,
+      "observed_peak_allocated_mb": 1512.47,
+      "observed_peak_reserved_mb": 1658.0,
+      "generation_overhead_above_load_mb": 18.3,
+      "cache_info": {
+        "int8_layers": 36,
+        "fp16_protected_layers": 0,
+        "int8_storage_mb": 26.01,
+        "fp16_protected_mb": 0.0,
+        "total_cache_mb": 26.01,
+        "fp16_equivalent_mb": 50.45
+      }
+    },
+    "v5_triton_fused": {
+      "method": "v5_triton_fused",
+      "prefill_ms": 11.98,
+      "decode_ms": 3566.96,
+      "total_ms": 3578.94,
+      "actual_new_tokens": 256,
+      "decode_tokens_per_sec": 71.49,
+      "end_to_end_tokens_per_sec": 71.53,
+      "memory_after_load_mb": 1494.17,
+      "observed_peak_allocated_mb": 1512.35,
+      "observed_peak_reserved_mb": 1658.0,
+      "generation_overhead_above_load_mb": 18.18,
+      "cache_info": {
+        "int8_layers": 36,
+        "fp16_protected_layers": 0,
+        "int8_storage_mb": 26.01,
+        "fp16_protected_mb": 0.0,
+        "total_cache_mb": 26.01,
+        "fp16_equivalent_mb": 50.45
+      }
+    },
+    "sanity_v2_vs_baseline_short": {
+      "token_agreement_pct": 100.0,
+      "first_divergence_step": 64,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 100.0,
+      "avg_logit_cosine_similarity": 0.999993
+    },
+    "sanity_v5_vs_baseline_short": {
+      "token_agreement_pct": 100.0,
+      "first_divergence_step": 64,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 100.0,
+      "avg_logit_cosine_similarity": 0.999995
+    },
+    "sanity_v2_vs_baseline_long": {
+      "token_agreement_pct": 100.0,
+      "first_divergence_step": 64,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 100.0,
+      "avg_logit_cosine_similarity": 0.999993
+    },
+    "sanity_v5_vs_baseline_long": {
+      "token_agreement_pct": 100.0,
+      "first_divergence_step": 64,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 100.0,
+      "avg_logit_cosine_similarity": 0.999995
+    },
+    "speed_v2_vs_base_pct": -67.9,
+    "speed_v5_vs_base_pct": -43.7,
+    "speed_v5_vs_v2_ratio": 1.76
+  },
+  {
+    "label": "long_decode",
+    "prompt_token_length": 256,
+    "max_new_tokens": 512,
+    "sanity_steps_short": 64,
+    "sanity_steps_long": 256,
+    "baseline_after_load_mb": 1485.47,
+    "baseline": {
+      "method": "baseline_fp16",
+      "prefill_ms": 15.43,
+      "decode_ms": 4084.18,
+      "total_ms": 4099.61,
+      "actual_new_tokens": 512,
+      "decode_tokens_per_sec": 125.12,
+      "end_to_end_tokens_per_sec": 124.89,
+      "memory_after_load_mb": 1485.47,
+      "observed_peak_allocated_mb": 1622.43,
+      "observed_peak_reserved_mb": 1856.0,
+      "generation_overhead_above_load_mb": 136.96,
+      "cache_info": {}
+    },
+    "v2_python_chunked": {
+      "method": "v2_python_chunked",
+      "prefill_ms": 15.05,
+      "decode_ms": 23559.0,
+      "total_ms": 23574.05,
+      "actual_new_tokens": 512,
+      "decode_tokens_per_sec": 21.69,
+      "end_to_end_tokens_per_sec": 21.72,
+      "memory_after_load_mb": 1554.93,
+      "observed_peak_allocated_mb": 1557.64,
+      "observed_peak_reserved_mb": 1712.0,
+      "generation_overhead_above_load_mb": 2.71,
+      "cache_info": {
+        "int8_layers": 36,
+        "fp16_protected_layers": 0,
+        "int8_storage_mb": 69.52,
+        "fp16_protected_mb": 0.0,
+        "total_cache_mb": 69.52,
+        "fp16_equivalent_mb": 134.82
+      }
+    },
+    "v5_triton_fused": {
+      "method": "v5_triton_fused",
+      "prefill_ms": 15.19,
+      "decode_ms": 6455.64,
+      "total_ms": 6470.83,
+      "actual_new_tokens": 512,
+      "decode_tokens_per_sec": 79.16,
+      "end_to_end_tokens_per_sec": 79.12,
+      "memory_after_load_mb": 1554.93,
+      "observed_peak_allocated_mb": 1557.64,
+      "observed_peak_reserved_mb": 1710.0,
+      "generation_overhead_above_load_mb": 2.71,
+      "cache_info": {
+        "int8_layers": 36,
+        "fp16_protected_layers": 0,
+        "int8_storage_mb": 69.52,
+        "fp16_protected_mb": 0.0,
+        "total_cache_mb": 69.52,
+        "fp16_equivalent_mb": 134.82
+      }
+    },
+    "sanity_v2_vs_baseline_short": {
+      "token_agreement_pct": 100.0,
+      "first_divergence_step": 64,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 100.0,
+      "avg_logit_cosine_similarity": 0.999994
+    },
+    "sanity_v5_vs_baseline_short": {
+      "token_agreement_pct": 100.0,
+      "first_divergence_step": 64,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 100.0,
+      "avg_logit_cosine_similarity": 0.999994
+    },
+    "sanity_v2_vs_baseline_long": {
+      "token_agreement_pct": 100.0,
+      "first_divergence_step": 256,
+      "steps_compared": 256,
+      "top1_logit_agreement_pct": 100.0,
+      "avg_logit_cosine_similarity": 0.999965
+    },
+    "sanity_v5_vs_baseline_long": {
+      "token_agreement_pct": 100.0,
+      "first_divergence_step": 256,
+      "steps_compared": 256,
+      "top1_logit_agreement_pct": 100.0,
+      "avg_logit_cosine_similarity": 0.999986
+    },
+    "speed_v2_vs_base_pct": -82.7,
+    "speed_v5_vs_base_pct": -36.7,
+    "speed_v5_vs_v2_ratio": 3.65
+  }
+]

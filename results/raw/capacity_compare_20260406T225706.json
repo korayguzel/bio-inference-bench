@@ -1,0 +1,57 @@
+{
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4070",
+    "total_mb": 11864.3125,
+    "compute_capability": [
+      8,
+      9
+    ]
+  },
+  "baseline": {
+    "method": "fp16",
+    "prompt_token_length": 11,
+    "max_new_tokens": 16,
+    "actual_new_tokens": 16,
+    "prefill_ms": 10.19,
+    "decode_ms": 120.05,
+    "total_ms": 130.24,
+    "decode_tokens_per_sec": 124.94,
+    "end_to_end_tokens_per_sec": 122.85,
+    "memory_before_generation_mb": 1488.56,
+    "memory_after_prefill_mb": 1490.49,
+    "prefill_peak_allocated_mb": 1491.77,
+    "decode_peak_allocated_mb": 1493.23,
+    "overall_peak_allocated_mb": 1493.23,
+    "end_to_end_generation_overhead_mb": 4.68,
+    "decode_phase_growth_mb": 2.74,
+    "decode_growth_per_token_mb": 0.1828,
+    "cache_info": {}
+  },
+  "int8_triton": {
+    "method": "int8-triton",
+    "prompt_token_length": 11,
+    "max_new_tokens": 16,
+    "actual_new_tokens": 16,
+    "prefill_ms": 11.71,
+    "decode_ms": 427.67,
+    "total_ms": 439.38,
+    "decode_tokens_per_sec": 35.07,
+    "end_to_end_tokens_per_sec": 36.41,
+    "memory_before_generation_mb": 1488.56,
+    "memory_after_prefill_mb": 1491.56,
+    "prefill_peak_allocated_mb": 1494.75,
+    "decode_peak_allocated_mb": 1491.59,
+    "overall_peak_allocated_mb": 1494.75,
+    "end_to_end_generation_overhead_mb": 6.19,
+    "decode_phase_growth_mb": 0.03,
+    "decode_growth_per_token_mb": 0.0021,
+    "cache_info": {
+      "int8_layers": 36,
+      "fp16_protected_layers": 0,
+      "int8_storage_mb": 2.36,
+      "fp16_protected_mb": 0.0,
+      "total_cache_mb": 2.36,
+      "fp16_equivalent_mb": 4.57
+    }
+  }
+}

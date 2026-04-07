@@ -1,0 +1,364 @@
+[
+  {
+    "label": "decode_heavy",
+    "prompt_token_length": 32,
+    "max_new_tokens": 256,
+    "gpu_info": {
+      "name": "NVIDIA GeForce RTX 4070",
+      "total_mb": 11864.3125,
+      "compute_capability": [
+        8,
+        9
+      ]
+    },
+    "A_fp16_fp16": {
+      "weight_quantization": "fp16",
+      "kv_mode": "fp16",
+      "weight_memory_mb": 1488.56,
+      "metadata_weight_mb": 1476.35,
+      "device_placement": {
+        "param_devices": [
+          "cuda:0"
+        ],
+        "fully_gpu_resident": true
+      },
+      "prompt_token_length": 32,
+      "max_new_tokens": 256,
+      "actual_new_tokens": 256,
+      "prefill_ms": 18.67,
+      "decode_ms": 1994.51,
+      "total_ms": 2013.17,
+      "decode_tokens_per_sec": 127.85,
+      "end_to_end_tokens_per_sec": 127.16,
+      "memory_before_generation_mb": 1488.56,
+      "memory_after_prefill_mb": 1494.18,
+      "prefill_peak_allocated_mb": 1497.33,
+      "decode_peak_allocated_mb": 1536.76,
+      "overall_peak_allocated_mb": 1536.76,
+      "end_to_end_generation_overhead_mb": 48.21,
+      "decode_phase_growth_mb": 42.58,
+      "cache_info": {}
+    },
+    "C_fp16_int8": {
+      "weight_quantization": "fp16",
+      "kv_mode": "int8-triton",
+      "weight_memory_mb": 1488.56,
+      "metadata_weight_mb": 1476.35,
+      "device_placement": {
+        "param_devices": [
+          "cuda:0"
+        ],
+        "fully_gpu_resident": true
+      },
+      "prompt_token_length": 32,
+      "max_new_tokens": 256,
+      "actual_new_tokens": 256,
+      "prefill_ms": 12.07,
+      "decode_ms": 3433.85,
+      "total_ms": 3445.92,
+      "decode_tokens_per_sec": 74.26,
+      "end_to_end_tokens_per_sec": 74.29,
+      "memory_before_generation_mb": 1488.56,
+      "memory_after_prefill_mb": 1497.25,
+      "prefill_peak_allocated_mb": 1505.95,
+      "decode_peak_allocated_mb": 1512.35,
+      "overall_peak_allocated_mb": 1512.35,
+      "end_to_end_generation_overhead_mb": 23.79,
+      "decode_phase_growth_mb": 15.09,
+      "cache_info": {
+        "int8_layers": 36,
+        "fp16_protected_layers": 0,
+        "int8_storage_mb": 26.01,
+        "fp16_protected_mb": 0.0,
+        "total_cache_mb": 26.01,
+        "fp16_equivalent_mb": 50.45
+      }
+    },
+    "E_int8w_fp16": {
+      "weight_quantization": "bnb-int8",
+      "kv_mode": "fp16",
+      "weight_memory_mb": 816.7,
+      "metadata_weight_mb": 801.35,
+      "device_placement": {
+        "param_devices": [
+          "cuda:0"
+        ],
+        "fully_gpu_resident": true
+      },
+      "prompt_token_length": 32,
+      "max_new_tokens": 256,
+      "actual_new_tokens": 256,
+      "prefill_ms": 41.8,
+      "decode_ms": 7010.24,
+      "total_ms": 7052.04,
+      "decode_tokens_per_sec": 36.38,
+      "end_to_end_tokens_per_sec": 36.3,
+      "memory_before_generation_mb": 816.7,
+      "memory_after_prefill_mb": 822.33,
+      "prefill_peak_allocated_mb": 825.53,
+      "decode_peak_allocated_mb": 864.91,
+      "overall_peak_allocated_mb": 864.91,
+      "end_to_end_generation_overhead_mb": 48.2,
+      "decode_phase_growth_mb": 42.58,
+      "cache_info": {}
+    },
+    "F_int8w_int8": {
+      "weight_quantization": "bnb-int8",
+      "kv_mode": "int8-triton",
+      "weight_memory_mb": 816.7,
+      "metadata_weight_mb": 801.35,
+      "device_placement": {
+        "param_devices": [
+          "cuda:0"
+        ],
+        "fully_gpu_resident": true
+      },
+      "prompt_token_length": 32,
+      "max_new_tokens": 256,
+      "actual_new_tokens": 256,
+      "prefill_ms": 36.54,
+      "decode_ms": 8217.48,
+      "total_ms": 8254.02,
+      "decode_tokens_per_sec": 31.03,
+      "end_to_end_tokens_per_sec": 31.02,
+      "memory_before_generation_mb": 816.7,
+      "memory_after_prefill_mb": 825.41,
+      "prefill_peak_allocated_mb": 834.16,
+      "decode_peak_allocated_mb": 840.49,
+      "overall_peak_allocated_mb": 840.49,
+      "end_to_end_generation_overhead_mb": 23.79,
+      "decode_phase_growth_mb": 15.09,
+      "cache_info": {
+        "int8_layers": 36,
+        "fp16_protected_layers": 0,
+        "int8_storage_mb": 26.01,
+        "fp16_protected_mb": 0.0,
+        "total_cache_mb": 26.01,
+        "fp16_equivalent_mb": 50.45
+      }
+    },
+    "sanity_C_fp16_int8_short": {
+      "token_agreement_pct": 100.0,
+      "first_divergence_step": 64,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 100.0,
+      "avg_logit_cosine_similarity": 0.999995
+    },
+    "sanity_C_fp16_int8_long": {
+      "token_agreement_pct": 100.0,
+      "first_divergence_step": 64,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 100.0,
+      "avg_logit_cosine_similarity": 0.999995
+    },
+    "sanity_E_int8w_fp16_short": {
+      "token_agreement_pct": 7.8,
+      "first_divergence_step": 5,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 7.8,
+      "avg_logit_cosine_similarity": 0.715772
+    },
+    "sanity_E_int8w_fp16_long": {
+      "token_agreement_pct": 7.8,
+      "first_divergence_step": 5,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 7.8,
+      "avg_logit_cosine_similarity": 0.715772
+    },
+    "sanity_F_int8w_int8_short": {
+      "token_agreement_pct": 7.8,
+      "first_divergence_step": 5,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 7.8,
+      "avg_logit_cosine_similarity": 0.723778
+    },
+    "sanity_F_int8w_int8_long": {
+      "token_agreement_pct": 7.8,
+      "first_divergence_step": 5,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 7.8,
+      "avg_logit_cosine_similarity": 0.723778
+    }
+  },
+  {
+    "label": "long_decode",
+    "prompt_token_length": 256,
+    "max_new_tokens": 512,
+    "gpu_info": {
+      "name": "NVIDIA GeForce RTX 4070",
+      "total_mb": 11864.3125,
+      "compute_capability": [
+        8,
+        9
+      ]
+    },
+    "A_fp16_fp16": {
+      "weight_quantization": "fp16",
+      "kv_mode": "fp16",
+      "weight_memory_mb": 1488.56,
+      "metadata_weight_mb": 1476.35,
+      "device_placement": {
+        "param_devices": [
+          "cuda:0"
+        ],
+        "fully_gpu_resident": true
+      },
+      "prompt_token_length": 256,
+      "max_new_tokens": 512,
+      "actual_new_tokens": 512,
+      "prefill_ms": 15.54,
+      "decode_ms": 4049.53,
+      "total_ms": 4065.07,
+      "decode_tokens_per_sec": 126.19,
+      "end_to_end_tokens_per_sec": 125.95,
+      "memory_before_generation_mb": 1488.56,
+      "memory_after_prefill_mb": 1533.56,
+      "prefill_peak_allocated_mb": 1558.72,
+      "decode_peak_allocated_mb": 1622.43,
+      "overall_peak_allocated_mb": 1622.43,
+      "end_to_end_generation_overhead_mb": 133.88,
+      "decode_phase_growth_mb": 88.88,
+      "cache_info": {}
+    },
+    "C_fp16_int8": {
+      "weight_quantization": "fp16",
+      "kv_mode": "int8-triton",
+      "weight_memory_mb": 1488.56,
+      "metadata_weight_mb": 1476.35,
+      "device_placement": {
+        "param_devices": [
+          "cuda:0"
+        ],
+        "fully_gpu_resident": true
+      },
+      "prompt_token_length": 256,
+      "max_new_tokens": 512,
+      "actual_new_tokens": 512,
+      "prefill_ms": 15.39,
+      "decode_ms": 6454.48,
+      "total_ms": 6469.86,
+      "decode_tokens_per_sec": 79.17,
+      "end_to_end_tokens_per_sec": 79.14,
+      "memory_before_generation_mb": 1488.56,
+      "memory_after_prefill_mb": 1558.01,
+      "prefill_peak_allocated_mb": 1627.55,
+      "decode_peak_allocated_mb": 1558.01,
+      "overall_peak_allocated_mb": 1627.55,
+      "end_to_end_generation_overhead_mb": 138.99,
+      "decode_phase_growth_mb": 0.0,
+      "cache_info": {
+        "int8_layers": 36,
+        "fp16_protected_layers": 0,
+        "int8_storage_mb": 69.52,
+        "fp16_protected_mb": 0.0,
+        "total_cache_mb": 69.52,
+        "fp16_equivalent_mb": 134.82
+      }
+    },
+    "E_int8w_fp16": {
+      "weight_quantization": "bnb-int8",
+      "kv_mode": "fp16",
+      "weight_memory_mb": 816.7,
+      "metadata_weight_mb": 801.35,
+      "device_placement": {
+        "param_devices": [
+          "cuda:0"
+        ],
+        "fully_gpu_resident": true
+      },
+      "prompt_token_length": 256,
+      "max_new_tokens": 512,
+      "actual_new_tokens": 512,
+      "prefill_ms": 42.08,
+      "decode_ms": 14008.91,
+      "total_ms": 14050.99,
+      "decode_tokens_per_sec": 36.48,
+      "end_to_end_tokens_per_sec": 36.44,
+      "memory_before_generation_mb": 816.7,
+      "memory_after_prefill_mb": 861.71,
+      "prefill_peak_allocated_mb": 886.87,
+      "decode_peak_allocated_mb": 950.59,
+      "overall_peak_allocated_mb": 950.59,
+      "end_to_end_generation_overhead_mb": 133.89,
+      "decode_phase_growth_mb": 88.88,
+      "cache_info": {}
+    },
+    "F_int8w_int8": {
+      "weight_quantization": "bnb-int8",
+      "kv_mode": "int8-triton",
+      "weight_memory_mb": 816.7,
+      "metadata_weight_mb": 801.35,
+      "device_placement": {
+        "param_devices": [
+          "cuda:0"
+        ],
+        "fully_gpu_resident": true
+      },
+      "prompt_token_length": 256,
+      "max_new_tokens": 512,
+      "actual_new_tokens": 512,
+      "prefill_ms": 40.05,
+      "decode_ms": 16602.38,
+      "total_ms": 16642.42,
+      "decode_tokens_per_sec": 30.78,
+      "end_to_end_tokens_per_sec": 30.76,
+      "memory_before_generation_mb": 816.7,
+      "memory_after_prefill_mb": 886.16,
+      "prefill_peak_allocated_mb": 955.7,
+      "decode_peak_allocated_mb": 886.16,
+      "overall_peak_allocated_mb": 955.7,
+      "end_to_end_generation_overhead_mb": 139.0,
+      "decode_phase_growth_mb": 0.0,
+      "cache_info": {
+        "int8_layers": 36,
+        "fp16_protected_layers": 0,
+        "int8_storage_mb": 69.52,
+        "fp16_protected_mb": 0.0,
+        "total_cache_mb": 69.52,
+        "fp16_equivalent_mb": 134.82
+      }
+    },
+    "sanity_C_fp16_int8_short": {
+      "token_agreement_pct": 100.0,
+      "first_divergence_step": 64,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 100.0,
+      "avg_logit_cosine_similarity": 0.999994
+    },
+    "sanity_C_fp16_int8_long": {
+      "token_agreement_pct": 100.0,
+      "first_divergence_step": 256,
+      "steps_compared": 256,
+      "top1_logit_agreement_pct": 100.0,
+      "avg_logit_cosine_similarity": 0.999986
+    },
+    "sanity_E_int8w_fp16_short": {
+      "token_agreement_pct": 10.9,
+      "first_divergence_step": 7,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 10.9,
+      "avg_logit_cosine_similarity": 0.711635
+    },
+    "sanity_E_int8w_fp16_long": {
+      "token_agreement_pct": 3.1,
+      "first_divergence_step": 7,
+      "steps_compared": 256,
+      "top1_logit_agreement_pct": 3.1,
+      "avg_logit_cosine_similarity": 0.715438
+    },
+    "sanity_F_int8w_int8_short": {
+      "token_agreement_pct": 18.8,
+      "first_divergence_step": 7,
+      "steps_compared": 64,
+      "top1_logit_agreement_pct": 18.8,
+      "avg_logit_cosine_similarity": 0.765549
+    },
+    "sanity_F_int8w_int8_long": {
+      "token_agreement_pct": 14.8,
+      "first_divergence_step": 7,
+      "steps_compared": 256,
+      "top1_logit_agreement_pct": 14.8,
+      "avg_logit_cosine_similarity": 0.780089
+    }
+  }
+]

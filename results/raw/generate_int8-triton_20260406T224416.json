@@ -1,0 +1,27 @@
+{
+  "method": "int8-triton",
+  "prompt_token_length": 3,
+  "max_new_tokens": 32,
+  "actual_new_tokens": 32,
+  "prefill_ms": 237.42,
+  "decode_ms": 638.27,
+  "total_ms": 875.69,
+  "decode_tokens_per_sec": 48.57,
+  "end_to_end_tokens_per_sec": 36.54,
+  "memory_before_generation_mb": 1476.35,
+  "memory_after_prefill_mb": 1486.33,
+  "prefill_peak_allocated_mb": 1487.14,
+  "decode_peak_allocated_mb": 1488.88,
+  "overall_peak_allocated_mb": 1488.88,
+  "end_to_end_generation_overhead_mb": 12.54,
+  "decode_phase_growth_mb": 2.55,
+  "decode_growth_per_token_mb": 0.0823,
+  "cache_info": {
+    "int8_layers": 36,
+    "fp16_protected_layers": 0,
+    "int8_storage_mb": 3.08,
+    "fp16_protected_mb": 0.0,
+    "total_cache_mb": 3.08,
+    "fp16_equivalent_mb": 5.98
+  }
+}
