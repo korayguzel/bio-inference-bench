@@ -6,7 +6,7 @@ Two generation paths:
 - SECONDARY: run_generate_api() — HuggingFace model.generate() wrapper.
   End-to-end baseline for cross-validation only.
 
-The primary path is what the mentor packet draws conclusions from.
+The primary path is the authoritative basis for bottleneck analysis.
 """
 
 from __future__ import annotations

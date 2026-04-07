@@ -155,7 +155,7 @@ dominates.
 | 2026-04-06 | Profiling harness, grid evaluation, operator profiling |
 | 2026-04-06 | KV v1 (failed), v2 (chunked INT8, -47%), v3 (boundary, dropped) |
 | 2026-04-06 | Fused Triton kernel: Phase A (39 tests), Phase B (3.7x over v2), Phase C (BLOCK_KV=64 optimal) |
-| 2026-04-06 | v5 productization: CLI, API, capacity table, quickstart, handoff |
+| 2026-04-06 | v5 productization: CLI, API, capacity table, quickstart, public docs |
 | 2026-04-06 | Weight quant Phase 1: NF4 four-way comparison (quality failed on long prompts) |
 | 2026-04-07 | Weight quant Phase 2: bnb-int8 (catastrophic quality failure) |
 | 2026-04-07 | Weight quant Phase 3: torchao INT8 (quality + stacking failure) |

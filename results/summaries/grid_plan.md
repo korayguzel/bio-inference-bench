@@ -117,8 +117,8 @@ Human-readable summary with:
 4. These three metrics are **always reported in separate columns**. The report
    will **never** compute "KV cache = peak - weights" or present observed
    overhead as if it were KV cache.
-5. The grid report includes a "Measurement Semantics" section identical to the
-   smoke mentor packet.
+5. The grid report includes a "Measurement Semantics" section aligned with the
+   smoke benchmark methodology.
 6. Interpretation uses hedged language: "consistent with" rather than "is".
 
 ## Execution Gating

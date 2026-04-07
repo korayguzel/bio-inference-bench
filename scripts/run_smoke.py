@@ -2,7 +2,7 @@
 """Run the smoke benchmark pair for harness validation.
 
 Runs the canonical smoke config on all registered models.
-Produces a comparison table and a mentor packet for review.
+Produces a comparison table and raw JSON artifacts.
 
 This is harness validation, NOT model comparison.
 
@@ -33,7 +33,6 @@ from bio_inference_bench.progen2_compat import patch_progen2_model
 from bio_inference_bench.profiler import get_gpu_info
 from bio_inference_bench.report import (
     format_comparison_table,
-    generate_mentor_packet,
     print_benchmark_result,
     print_metadata_table,
     save_result_json,
@@ -48,7 +47,7 @@ logger = logging.getLogger(__name__)
 def _make_failed_entry(
     model_name: str, metadata: ModelMetadata
 ) -> dict:
-    """Create a failed-result entry for the mentor packet."""
+    """Create a failed-result entry for the smoke results."""
     error_msg = f"All candidates failed. See warnings: {metadata.warnings}"
     return {
         "primary_result": GenerationResult(
@@ -237,11 +236,7 @@ def main() -> None:
     # Comparison table
     print(format_comparison_table(all_results))
 
-    # Mentor packet
-    packet_path = Path("results/summaries/mentor_packet.md")
-    generate_mentor_packet(all_results, gpu_info, packet_path)
-    print(f"\nMentor packet saved to: {packet_path}")
-    print("\nSTOP: Submit this mentor packet for review before proceeding to grid.")
+    print("\nSmoke run complete. Raw artifacts are saved under results/raw/.")
 
 
 if __name__ == "__main__":

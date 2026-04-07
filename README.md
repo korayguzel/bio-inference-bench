@@ -126,7 +126,5 @@ bio-inference-bench/
     test_triton_int8_attention.py   # 39 Triton kernel correctness tests
   results/
     raw/                            # Per-run JSON results
-    summaries/                      # Reports, handoffs, closure memos
+    summaries/                      # Reports and reproducibility artifacts
 ```
-
-For the full file inventory, see `results/summaries/final_repo_handoff.md`.

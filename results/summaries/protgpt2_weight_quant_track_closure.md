@@ -145,7 +145,7 @@ All raw data and reports are retained in the project history:
 | Phase 2 report | `results/summaries/weight_quant_phase2_report.md` |
 | Phase 3 raw | `results/raw/weight_quant_phase3_20260407T103724.json` |
 | Phase 3 report | `results/summaries/weight_quant_phase3_report.md` |
-| Planning memo | `results/summaries/weight_quantized_track_plan.md` |
+| Planning memo | Removed from the public repo during final cleanup |
 | This closure memo | `results/summaries/protgpt2_weight_quant_track_closure.md` |
 
 ---
