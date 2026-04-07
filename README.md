@@ -1,18 +1,38 @@
 # bio-inference-bench
 
-Profiling benchmark and capacity optimization for autoregressive protein sequence
-generation on consumer GPUs (12 GB VRAM).
+Profiling and capacity optimization for autoregressive protein language model
+inference on consumer GPUs.
 
 **Status:** Finalized (2026-04-07). See `results/summaries/final_project_summary.md`.
 
+## At a glance
+
+- Built a reproducible CUDA profiling + benchmark harness for protein sequence generation
+- Implemented a fused Triton INT8 KV-cache path for ProtGPT2
+- Reduced ProtGPT2 decode-phase memory growth by **60-97%** vs FP16 baseline
+- Preserved generation quality on the validated window with **100% token agreement through 256 decode steps**
+- Evaluated and ruled out three standard zero-calibration weight-quantization methods for ProtGPT2
+
 ## What this project is
 
-A **profiling and capacity optimization** project for protein language model inference.
-Starting from a reproducible measurement harness, the project identified the KV cache
-as the primary memory growth bottleneck during decode, then built a fused Triton kernel
-for INT8 KV attention that reduces decode-phase memory growth by 60-97% with zero
-quality loss. Weight quantization was evaluated (three methods) and ruled out for
-ProtGPT2.
+This repository starts from a simple question:
+
+> Can protein language model inference be made meaningfully more VRAM-efficient on local GPUs without hand-wavy bottleneck assumptions?
+
+The answer for ProtGPT2 was **yes, on the KV-cache side**.
+
+Starting from a measurement-first harness, the project identified decode-time KV
+growth as the practical memory bottleneck for ProtGPT2, then built a fused Triton
+kernel for INT8 KV attention that substantially reduces runtime memory growth while
+preserving output quality in the tested window.
+
+The same repository also records an important negative result: standard
+zero-calibration weight quantization methods did **not** meet the quality bar for
+ProtGPT2, so the final canonical path is:
+
+- **FP16 weights**
+- **INT8-Triton KV cache for decode**
+- **capacity optimization first, speed optimization second**
 
 ## Key design principles
 
